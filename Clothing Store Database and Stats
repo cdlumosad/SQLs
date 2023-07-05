@@ -1,0 +1,32 @@
+CREATE TABLE store (id INTEGER, item TEXT, section TEXT, backstock INTEGER, price INTEGER);
+
+INSERT INTO store VALUES (1, "Socks", "footwear", 3, 5);
+INSERT INTO store VALUES (2, "Beach Shorts", "pants and shorts", 2, 10);
+INSERT INTO store VALUES (3, "Bomber Jackets", "Outerwear", 5, 25);  
+INSERT INTO store VALUES (4, "Modern Khaki", "Pants and Shorts", 2, 20);
+INSERT INTO store values (5, "Bikini", "Underwear", 4, 11.99);
+insert into store values (6, "Converse", "Footwear", 3, 17);
+insert into store values (7, "Sandals", "Footwear", 3, 8);
+insert into store values (8, "Polo Shirts", "Shirts", 1, 18.99);
+insert into store values (9, "V-neck", "Shirt", 1, 8.99);
+insert into store values (10, "Crew Neck", "Shirts", 1, 8.99);
+insert into store values (11, "Vest", "Outerwear", 5, 30);
+insert into store values (12, "Blazers", "Outerwear", 5, 28.99);
+insert into store values (13, "Boxer Shorts", "Underwear", 4, 4.99);
+
+--display database ordered by price
+SELECT * FROM store
+ORDER BY price asc;
+
+--quantity of items in back stock
+SELECT item, price, backstock
+FROM store
+ORDER BY backstock desc
+limit 5;
+
+--what is the avg price for outerwear?
+SELECT AVG (price) "Average Outerwear Price"
+FROM store
+WHERE section ='Outerwear'; 
+
+
